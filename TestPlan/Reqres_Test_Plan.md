@@ -166,7 +166,7 @@ This document serves as the formal test plan for manual testing of the public RE
 |------------------------------------------------------------------|-------------|
 | Write Test Plan document (`TestPlan/Reqres_Test_Plan.md`)         | 2 hour      |
 | Prepare valid and invalid JSON payloads in `TestData/`            | 1 hour      |
-| Design detailed test cases in `TestCases/Reqres_API_TC.xlsx`  | 4-5 hours   |
+| Design detailed test cases in `TestCases/Reqres_API_TC.md`  | 4-5 hours   |
 
 ---
 
