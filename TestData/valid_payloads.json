@@ -1,0 +1,14 @@
+{
+    "register_valid": {
+      "email": "eve.holt@reqres.in",
+      "password": "pistol"
+    },
+    "login_valid": {
+      "email": "eve.holt@reqres.in",
+      "password": "cityslicka"
+    },
+    "user_full": {
+      "name": "morpheus",
+      "job": "leader"
+    }
+  }

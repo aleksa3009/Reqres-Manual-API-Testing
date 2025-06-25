@@ -1,0 +1,13 @@
+{
+    "register_missing_password": {
+      "email": "sydney@fife"
+    },
+    "login_missing_email": {
+      "password": "123456"
+    },
+    "user_extra_field": {
+      "name": "morpheus",
+      "job": "leader",
+      "extra": "field"
+    }
+  }
