@@ -6,11 +6,13 @@
 **Test Steps & Expected Results:**  
 1. **Step:** Open Postman.  
    **Expected:** Postman is launched.  
-2. **Step:** Send GET `https://reqres.in/api/users?page=1`.  
+2. **Step:** Enter Key: x-api-key and Value: reqres-free-v1
+   **Expected:**  Key and Value are entered correctly. 
+3. **Step:** Send GET `https://reqres.in/api/users?page=1`.  
    **Expected:** Response status `200`.  
-3. **Step:** Validate response JSON against user-list schema.  
+4. **Step:** Validate response JSON against user-list schema.  
    **Expected:** Schema matches: root contains `page`, `per_page`, `total`, `total_pages`, `data[]`.  
-4. **Step:** Inspect first item in `data[]`.  
+5. **Step:** Inspect first item in `data[]`.  
    **Expected:** Contains `id`, `email`, `first_name`, `last_name`, `avatar`.  
 **Priority:** High  
 **Type:** Functional
