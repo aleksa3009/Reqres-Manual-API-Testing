@@ -27,7 +27,7 @@
 3. Check `data[]`.  
 4. Verify `page` field equals `0`.  
 **Result:** FAIL  
-**Actual:** Returned non-empty list instead of empty `data[]`.  
+**Actual:** "error": "Missing API key".  
 **Screenshot:** `ExecutionResults/Screenshots/API_02_fail.png`  
 **End Time:** 26-06-2025 10:14
 
