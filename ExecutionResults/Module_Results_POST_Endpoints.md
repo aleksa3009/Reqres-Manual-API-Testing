@@ -7,6 +7,10 @@
 
 ---
 
+## POST /register Endpoint Test Execution
+
+---
+
 ### API_15 – Verify POST /register with valid data returns 200 and token  
 **Start Time:** 27-06-2025 10:00  
 **Steps:**  
@@ -115,3 +119,65 @@
 
 ---
 
+### API_23 – Verify POST /login with valid credentials returns 200 and token  
+**Start Time:** 27-06-2025 11:02  
+**Steps:**  
+- POST to `/login` with: `{"email":"eve.holt@reqres.in","password":"cityslicka"}`  
+- Validate status 200 and token present.  
+**Result:** PASS  
+**End Time:** 27-06-2025 11:06  
+
+---
+
+### API_24 – Verify POST /login without password returns 400  
+**Start Time:** 27-06-2025 11:08  
+**Steps:**  
+- POST: `{"email":"eve.holt@reqres.in"}`  
+- Expect 400, with `Missing password` error.  
+**Result:** FAIL  
+**Actual:** No error shown.  
+**Screenshot:** `ExecutionResults/Screenshots/API_24_fail.png`  
+**End Time:** 27-06-2025 11:14  
+
+---
+
+### API_25 – Verify POST /login without email returns 400  
+**Start Time:** 27-06-2025 11:16  
+**Steps:**  
+- POST with only `password`.  
+- Status should be `400`.  
+**Result:** PASS  
+**End Time:** 27-06-2025 11:21  
+
+---
+
+### API_26 – Verify POST /login wrong password returns 400  
+**Start Time:** 27-06-2025 11:23  
+**Steps:**  
+- POST with `eve.holt@reqres.in` and wrong password.  
+- Expect status `400` with `user not found`.  
+**Result:** PASS  
+**End Time:** 27-06-2025 11:29  
+
+---
+
+### API_27 – Verify POST /login invalid email format returns 400  
+**Start Time:** 27-06-2025 11:31  
+**Steps:**  
+- Email: `"bademail"` + valid password.  
+- Should return `400`.  
+**Result:** PASS  
+**End Time:** 27-06-2025 11:38  
+
+---
+
+### API_28 – Verify POST /login performance under 3s  
+**Start Time:** 27-06-2025 11:40  
+**Steps:**  
+- POST valid login.  
+- Measure duration.  
+- Ensure < 3000ms.  
+**Result:** PASS  
+**End Time:** 27-06-2025 11:47  
+
+---
