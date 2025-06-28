@@ -1,97 +1,159 @@
 ## GET /users?page={n} (8 cases)
 
+--- 
+
 ### API_01  
 **Title:** Verify GET /users?page=1 returns 200 and valid schema  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. **Step:** Open Postman.  
-   **Expected:** Postman is launched.  
-2. **Step:** Enter Key: x-api-key and Value: reqres-free-v1
-   **Expected:**  Key and Value are entered correctly. 
-3. **Step:** Send GET `https://reqres.in/api/users?page=1`.  
-   **Expected:** Response status `200`.  
-4. **Step:** Validate response JSON against user-list schema.  
-   **Expected:** Schema matches: root contains `page`, `per_page`, `total`, `total_pages`, `data[]`.  
-5. **Step:** Inspect first item in `data[]`.  
-   **Expected:** Contains `id`, `email`, `first_name`, `last_name`, `avatar`.  
+
+**Test Steps:**  
+1. Open Postman and set method to GET.  
+2. Set URL to `https://reqres.in/api/users?page=1`.  
+3. Add header `x-api-key: reqres-free-v1`.  
+4. Send the request.  
+5. Validate JSON structure against schema.  
+6. Inspect first item in `data[]`.  
+
+**Expected Results:**  
+- Status code is `200 OK`.  
+- Response JSON includes `page`, `per_page`, `total`, `total_pages`, `data[]`.  
+- Each `data[]` item has `id`, `email`, `first_name`, `last_name`, `avatar`.  
+
 **Priority:** High  
-**Type:** Functional
+
+**Type:** Functional  
+
+---
 
 ### API_02  
 **Title:** Verify GET /users?page=0 returns empty list  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=0` → status `200`.  
-3. Check `data` array → empty (`[].`).  
-4. Verify `page` field equals `0`.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=0`.  
+
+**Expected Results:**  
+- Status code `200 OK`.  
+- Response contains `"data": []`.  
+- Field `"page"` equals `0`.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_03  
 **Title:** Verify GET /users?page=100 returns empty data  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=100` → status `200`.  
-3. Confirm `data` is empty.  
-4. Confirm `total_pages` remains unchanged.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=100`.  
+
+**Expected Results:**  
+- Status `200 OK`.  
+- Response includes `"data": []`.  
+- Field `total_pages` remains unchanged.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_04  
 **Title:** Verify GET /users?page=-1 handles invalid page  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=-1` → status `200` or `400`.  
-3. If `200`: `data` empty; if `400`: error JSON.  
-4. Verify error message if present.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=-1`.  
+**Expected Results:**  
+- Status `200 OK` or `400 Bad Request`.  
+- If `200`: `"data": []` expected.  
+- If `400`: error JSON with proper message.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_05  
 **Title:** Verify GET /users?page=1 returns correct `per_page` count  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=1` → status `200`.  
-3. Read `per_page` value → expected `6`.  
-4. Count elements in `data` → equals `per_page`.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=1`.  
+2. Extract `per_page` value.  
+3. Count elements in `data[]`.  
+
+**Expected Results:**  
+- Status `200 OK`.  
+- Count of `data[]` equals `per_page`.  
+
 **Priority:** High  
-**Type:** Functional
+
+**Type:** Functional  
+
+---
 
 ### API_06  
 **Title:** Verify GET /users?page=abc returns error or empty  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=abc` → status `400` or `200`.  
-3. If `200`: `data` empty; if `400`: error JSON.  
-4. Confirm appropriate error message.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=abc`.  
+
+**Expected Results:**  
+- Status `400` or `200`.  
+- If `200`: `"data": []`.  
+- If `400`: JSON contains error message.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_07  
 **Title:** Verify GET /users?page=1 pagination metadata present  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=1` → status `200`.  
-3. Verify presence of `page`, `total`, `total_pages`, `per_page`.  
-4. Values plausible (e.g. `total_pages` > 0).  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=1`.  
+2. Inspect response fields.  
+
+**Expected Results:**  
+- Status `200 OK`.  
+- Fields present: `page`, `per_page`, `total`, `total_pages`.  
+- Values are logically consistent.  
+
 **Priority:** High  
-**Type:** Functional
+
+**Type:** Functional  
+
+---
 
 ### API_08  
 **Title:** Verify GET /users?page=1 supports CORS headers  
-**Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?page=1` → status `200`.  
-3. Check response headers → `Access-Control-Allow-Origin: *`.  
-4. Confirm other CORS headers exist.  
-**Priority:** Low  
-**Type:** Boundary
 
----
+**Preconditions:** None  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users?page=1`.  
+2. Check response headers.  
+
+**Expected Results:**  
+- Header `Access-Control-Allow-Origin: *` is present.  
+- Other standard CORS headers (e.g. `Access-Control-Allow-Methods`) exist.  
+
+**Priority:** Low  
+
+**Type:** Boundary  

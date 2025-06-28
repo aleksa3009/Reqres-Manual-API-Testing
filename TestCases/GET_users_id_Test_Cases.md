@@ -1,69 +1,120 @@
 ## GET /users/{id} (6 cases)
 
+---
+
 ### API_09  
 **Title:** Verify GET /users/2 returns 200 and correct user  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `https://reqres.in/api/users/2` → status `200`.  
-3. Validate JSON schema for single user.  
-4. Confirm `data.id = 2`.  
+
+**Test Steps:**  
+1. Open Postman and set method to GET.  
+2. Send request to `https://reqres.in/api/users/2`.  
+3. Validate response schema for single user.  
+4. Confirm that `data.id = 2`.  
+
+**Expected Results:**  
+- Status code is `200 OK`.  
+- Response contains expected user fields (`id`, `email`, `first_name`, etc.).  
+- `data.id` is `2`.  
+
 **Priority:** High  
-**Type:** Functional
+
+**Type:** Functional  
+
+---
 
 ### API_10  
 **Title:** Verify GET /users/23 returns 404  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?users/23` → status `404`.  
-3. Response body empty or `{}`.  
-4. No user data present.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users/23`.  
+
+**Expected Results:**  
+- Status code is `404 Not Found`.  
+- Response body is empty or `{}`.  
+- No user data is returned.  
+
 **Priority:** High  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_11  
 **Title:** Verify GET /users/string returns 404 or error  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?users/abc` → status `404`.  
-3. Response empty.  
-4. Confirm no data.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users/abc`.  
+
+**Expected Results:**  
+- Status code is `404 Not Found`.  
+- Response body is empty.  
+- No data structure is returned.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_12  
 **Title:** Verify GET /users/0 returns 404  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?users/0` → status `404`.  
-3. Response empty.  
-4. Confirm no data.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users/0`.  
+
+**Expected Results:**  
+- Status code is `404 Not Found`.  
+- Response body is empty or `{}`.  
+
 **Priority:** Medium  
-**Type:** Negative
+
+**Type:** Negative  
+
+---
 
 ### API_13  
 **Title:** Verify GET /users/1 returns expected structure  
+
 **Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `...?users/1` → status `200`.  
-3. Confirm `data.email` contains `@`.  
-4. Confirm `support.url` present.  
+
+**Test Steps:**  
+1. Send GET request to `https://reqres.in/api/users/1`.  
+2. Inspect `data.email`.  
+3. Inspect `support.url`.  
+
+**Expected Results:**  
+- Status code is `200 OK`.  
+- `data.email` contains `@`.  
+- `support.url` is present and valid.  
+
 **Priority:** High  
-**Type:** Functional
+
+**Type:** Functional  
+
+---
 
 ### API_14  
 **Title:** Verify GET /users/2 repeated calls return consistent data  
-**Preconditions:** None  
-**Test Steps & Expected Results:**  
-1. Open Postman → launched.  
-2. GET `/users/2` twice.  
-3. Compare both responses.  
-4. Data identical (id, email, names).  
-**Priority:** Low  
-**Type:** Boundary
 
----
+**Preconditions:** None  
+
+**Test Steps:**  
+1. Send GET request to `/users/2`.  
+2. Repeat request.  
+3. Compare both responses.  
+
+**Expected Results:**  
+- Status `200 OK` on both requests.  
+- Response bodies are identical (same `id`, `email`, etc.).  
+
+**Priority:** Low  
+
+**Type:** Boundary  
