@@ -57,7 +57,7 @@ Re-tested all previously logged bugs in Postman (v11.49.3).
 ### Bug ID: #8 – API_24: [BUG] POST /login without password shows no error
 - **Retested in Postman v11.49.3**  
 - **Status:** Not Reproducible  
-- **Comment:** Response Status `403 Forbidden Error` , needs fix
+- **Comment:** Response Status `403 Forbidden Error` , needs fix.
 
 ---
  
