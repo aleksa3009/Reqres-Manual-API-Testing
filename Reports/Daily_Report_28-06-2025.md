@@ -16,7 +16,7 @@
 
 ## Environment:
 - **OS:** Ubuntu 22.04 LTS  
-- **API Client:** Postman v10.18.1  
+- **API Client:** Postman v11.49.3  
 - **Test Management:** Visual Studio Code (Markdown)  
 - **Defect Tracking:** GitHub Issues  
 - **Time Tracking:** Manual timestamps recorded in execution results file
