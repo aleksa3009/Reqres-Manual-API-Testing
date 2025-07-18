@@ -73,7 +73,6 @@ Particular attention was paid to input validation, error handling, REST complian
 ├── ExecutionResults/
 │   ├── Bug_Retest_Results.md
 │   ├── Module_Results_DELETE_Endpoints.md
-│   ├── Module_Results_Unknown_Retest.md
 │   ├── Module_Results_GET_Endpoints.md
 │   ├── Module_Results_GET_unknown_Endpoints.md
 │   ├── Module_Results_PATCH_Endpoints.md
