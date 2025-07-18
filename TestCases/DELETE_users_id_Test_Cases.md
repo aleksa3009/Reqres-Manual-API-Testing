@@ -5,7 +5,7 @@
 ### API_35  
 **Title:** Verify DELETE /users/2 returns 204 No Content  
 
-**Preconditions:** User with ID=2 exists  
+**Preconditions:** Verify user existence with GET /users/2 before DELETE  
 
 **Test Steps:**  
 1. Open Postman and set method to DELETE.  
@@ -15,6 +15,7 @@
 **Expected Results:**  
 - HTTP status code is `204 No Content`.  
 - Response body is empty.  
+- Response headers include Content-Length: 0.
 - Response time is under 3 seconds.  
 
 **Priority:** High  
@@ -32,7 +33,7 @@
 1. Send DELETE request to `https://reqres.in/api/users/2`.  
 
 **Expected Results:**  
-- HTTP status code is `404 Not Found` or similar.  
+- HTTP status code is `404 Not Found`.  
 - Response body is empty or contains appropriate error.  
 
 **Priority:** Medium  
