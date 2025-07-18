@@ -15,8 +15,9 @@
 
 **Expected Results:**  
 - Status code is `200 OK`.  
-- Response contains expected user fields (`id`, `email`, `first_name`, etc.).  
+- Response contains fields (`id`, `email`, `first_name`, `last_name`, `avatar`).  
 - `data.id` is `2`.  
+- Response header Content-Type is application/json.
 
 **Priority:** High  
 
@@ -34,8 +35,9 @@
 
 **Expected Results:**  
 - Status code is `404 Not Found`.  
-- Response body is empty or `{}`.  
+- Response body is `{}` or empty string.  
 - No user data is returned.  
+- Response header Content-Type is application/json.
 
 **Priority:** High  
 
@@ -52,8 +54,8 @@
 1. Send GET request to `https://reqres.in/api/users/abc`.  
 
 **Expected Results:**  
-- Status code is `404 Not Found`.  
-- Response body is empty.  
+- Status code is 404 Not Found or 400 Bad Request depending on API behavior.  
+- Response body is `{}` or empty string.  
 - No data structure is returned.  
 
 **Priority:** Medium  
@@ -72,7 +74,7 @@
 
 **Expected Results:**  
 - Status code is `404 Not Found`.  
-- Response body is empty or `{}`.  
+- Response body is `{}` or empty string.  
 
 **Priority:** Medium  
 
@@ -86,14 +88,17 @@
 **Preconditions:** None  
 
 **Test Steps:**  
-1. Send GET request to `https://reqres.in/api/users/1`.  
-2. Inspect `data.email`.  
-3. Inspect `support.url`.  
+1. Send GET request to `https://reqres.in/api/users/1`.
+2. Response contains fields (`id`, `email`, `first_name`, `last_name`, `avatar`).   
+3. Inspect `data.email`.  
+4. Inspect `support.url`.  
 
 **Expected Results:**  
 - Status code is `200 OK`.  
 - `data.email` contains `@`.  
-- `support.url` is present and valid.  
+- `support.url` is present and valid.
+- Response header Content-Type is application/json.
+- Field support.url is a valid URL.  
 
 **Priority:** High  
 
@@ -113,7 +118,9 @@
 
 **Expected Results:**  
 - Status `200 OK` on both requests.  
-- Response bodies are identical (same `id`, `email`, etc.).  
+- Response bodies are identical (same `id`, `email`, etc.).
+- Compare full JSON response bodies for equality.
+- Response headers and status codes are consistent.
 
 **Priority:** Low  
 
