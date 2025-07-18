@@ -10,15 +10,18 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Set method to POST and URL to `https://reqres.in/api/login`.  
-3. Set request body to JSON: `{"email":"eve.holt@reqres.in","password":"cityslicka"}`.  
-4. Send the request.  
+2. Set method to POST and URL to `https://reqres.in/api/login`.
+3. Add header: `x-api-key: reqres-free-v1`.  
+4. Set request body to JSON: `{"email":"eve.holt@reqres.in","password":"cityslicka"}`.  
+5. Send the request.  
 
 **Expected Results:**  
-- HTTP status code `200 OK`.  
-- Response body contains `token` (string).  
-- Response header `Content-Type` is `application/json`.  
-- Response time less than 3 seconds.  
+- HTTP status code is `200 OK`.  
+- Response body contains `token` (non-empty string).
+- Token is alphanumeric and consistent in format.
+- No sensitive data (e.g., password) is returned.  
+- `Content-Type` is `application/json`.  
+- Response time is less than 3 seconds.  
 
 **Priority:** High  
 
@@ -35,13 +38,16 @@
 **Test Steps:**  
 1. Open Postman.  
 2. Set POST request to `/login` with body: `{"email":"eve.holt@reqres.in"}`.  
-3. Send request.  
+3. Add header: `x-api-key: reqres-free-v1`.
+4. Send request.  
 
 **Expected Results:**  
-- HTTP status code `400 Bad Request`.  
-- Response body contains `{ "error": "Missing password" }`.  
-- Response header `Content-Type` is `application/json`.  
-- Response time less than 3 seconds.  
+- HTTP status code is `400 Bad Request`.  
+- Response body contains `{ "error": "Missing password" }`.
+- `"error"` field is present and informative.
+- `token` field is not present.
+- `Content-Type` is `application/json`.  
+- Response time is less than 3 seconds.  
 
 **Priority:** High  
 
@@ -57,14 +63,17 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Set POST request to `/login` with body: `{"password":"cityslicka"}`.  
-3. Send request.  
+2. Set POST request to `/login` with body: `{"password":"cityslicka"}`.
+3. Add header: `x-api-key: reqres-free-v1`.  
+4. Send request.  
 
 **Expected Results:**  
-- HTTP status code `400 Bad Request`.  
+- HTTP status code is `400 Bad Request`.  
 - Response body contains `{ "error": "Missing email or username" }`.  
-- Response header `Content-Type` is `application/json`.  
-- Response time less than 3 seconds.  
+- `"error"` field is present and informative.
+- `token` field is not present.
+- `Content-Type` is `application/json`.  
+- Response time is less than 3 seconds.  
 
 **Priority:** High  
 
@@ -81,13 +90,15 @@
 **Test Steps:**  
 1. Open Postman.  
 2. Send POST request with: `{"email":"eve.holt@reqres.in","password":"wrong"}`.  
-3. Send request.  
+3. Add header: x-api-key: reqres-free-v1.
+4. Send request.  
 
 **Expected Results:**  
-- HTTP status code `400 Bad Request`.  
-- Response body contains error like `{ "error": "user not found" }`.  
-- Response header `Content-Type` is `application/json`.  
-- Response time less than 3 seconds.  
+- HTTP status code is `400 Bad Request`.  
+- Response body contains error message like: `{ "error": "user not found" }`.  
+- `token` field is not present.
+- `Content-Type` is `application/json`.  
+- Response time is less than 3 seconds. 
 
 **Priority:** Medium  
 
@@ -104,13 +115,14 @@
 **Test Steps:**  
 1. Open Postman.  
 2. Send POST request with: `{"email":"bademail","password":"cityslicka"}`.  
-3. Send request.  
+3. Add header: `x-api-key: reqres-free-v1`.
+4. Send request.  
 
 **Expected Results:**  
-- HTTP status code `400 Bad Request`.  
+- HTTP status code is `400 Bad Request`.  
 - Response body contains email format error or generic error message.  
-- Response header `Content-Type` is `application/json`.  
-- Response time less than 3 seconds.  
+- `Content-Type` is `application/json`.  
+- Response time is less than 3 seconds.  
 
 **Priority:** Medium  
 
@@ -126,14 +138,16 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Send valid POST login request.  
-3. Measure response duration using Postman.  
+2. Send valid POST login request: `{"email":"eve.holt@reqres.in","password":"cityslicka"}`. 
+3. Add header: `x-api-key: reqres-free-v1`.
+4. Measure response duration using Postman.  
 
-**Expected Results:**  
-- Response time is less than 3000ms.  
+**Expected Results:**   
 - Status code is `200 OK`.  
-- Response contains valid `token`.  
+- Response contains valid `token`.
+- Response time is less than 3000ms. 
+- No performance degradation or timeout.
 
 **Priority:** Low  
 
-**Type:** Boundary 
+**Type:** Boundary/Performance 
