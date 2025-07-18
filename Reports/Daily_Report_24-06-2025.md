@@ -5,7 +5,7 @@
 - Prepared test data JSON files in the `TestData/` folder:  
   - `valid_payloads.json` (register, login, full & partial update payloads)  
   - `invalid_payloads.json` (missing fields, extra fields, empty payload)  
-- Designed and documented ~40 detailed test cases in TestRail (grouped by endpoint: GET /users?page, GET /users/{id}, POST /register, POST /login, PUT/PATCH/DELETE /users/{id}, GET /unknown/{id}).  
+- Designed and documented 40 detailed test cases in TestRail (grouped by endpoint: GET /users?page, GET /users/{id}, POST /register, POST /login, PUT/PATCH/DELETE /users/{id}, GET /unknown/{id}).  
 - Set up and configured testing tools: Postman environment, TestRail project, GitHub Issues templates, VS Code workspace.  
 
 **Environment:**  
@@ -15,7 +15,8 @@
 - Editor: Visual Studio Code  
 
 **Issues:**  
-- No significant issues or blockers encountered during planning, test data preparation, or test case design.  
+- No significant issues or blockers encountered during planning, test data preparation, or test case design.
+- No blockers encountered. All initial setup tasks completed as planned.  
 
 **Next Steps:**  
 - Execute GET endpoint tests (`/users?page={n}` and `/users/{id}`) in Postman and record status codes, response bodies, JSON schema validation, and response times.  
