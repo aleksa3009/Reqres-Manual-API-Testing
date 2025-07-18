@@ -17,6 +17,8 @@ This repository demonstrates a full manual testing lifecycle of the [Reqres.in](
 
 **Project Timeline:** 26-06-2025 to 30-06-2025 (Completed in 5 days instead of planned 7)
 
+**Note:** As of June 2025, Reqres.in requires all requests to include the following API key header: `x-api-key: reqres-free-v1`
+
 ---
 
 ## Repository Structure
@@ -41,12 +43,11 @@ This repository demonstrates a full manual testing lifecycle of the [Reqres.in](
 ├── ExecutionResults/
 │   ├── Bug_Retest_Results.md
 │   ├── Module_Results_DELETE_Endpoints.md
-│   ├── Module_Results_Unknown_Retest.md
 │   ├── Module_Results_GET_Endpoints.md
 │   ├── Module_Results_GET_unknown_Endpoints.md
 │   ├── Module_Results_PATCH_Endpoints.md
 │   ├── Module_Results_POST_Endpoints.md
-│   ├── Module_Results_PUT_Endpoints
+│   ├── Module_Results_PUT_Endpoints.md
 │   └── Screenshots/
 ├── Reports/
 │   ├── Daily_Report_24-06-2025.md
@@ -142,6 +143,8 @@ This project showcases a practical, portfolio-ready example of manual API testin
 It demonstrates readiness for a junior QA role, including test design, execution, defect analysis, and thorough documentation.
 
 **The organized structure, execution discipline, and reporting detail reflect strong QA fundamentals and attention to quality. The project can confidently be presented as part of a professional portfolio.**
+
+**Note:** This is a personal portfolio project. A few of the reported bugs were intentionally fabricated to demonstrate defect documentation and reporting skills.
 
 ---
 
