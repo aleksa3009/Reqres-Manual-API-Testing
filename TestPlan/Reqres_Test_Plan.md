@@ -83,7 +83,7 @@ This document serves as the formal test plan for manual testing of the public RE
 1. **Test Types:** Functional, boundary, negative and exploratory testing (to discover edge cases and unexpected issues) 
 2. **Test Design:**  
    - Risk-based prioritization focusing on high-impact endpoints and common failure points  
-   - Detailed, step-by-step test cases documented in Markdown and TestRail  
+   - Detailed, step-by-step test cases documented in Markdown  
 3. **Execution Order:**  
    1. GET endpoints (list and single user)  
    2. POST endpoints (register and login)  
