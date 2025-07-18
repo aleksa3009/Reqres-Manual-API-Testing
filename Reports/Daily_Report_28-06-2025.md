@@ -1,4 +1,4 @@
-# Daily Report – Day 3 (27-06-2025)
+# Daily Report – Day 4 (27-06-2025)
 
 **Tester:** Aleksa Aleksić  
 **Project:** Reqres.in API Manual Testing  
@@ -12,7 +12,7 @@
 - Captured **4** screenshots for failing test cases and saved in `ExecutionResults/Screenshots/`.  
 - Logged **4** defects in GitHub Issues with detailed reproduction steps and screenshots.  
 - Performed **3** exploratory tests with malformed JSON.
-- Retest all defects and write daily report  
+- Retested all defects and write daily report  
 
 ## Environment:
 - **OS:** Ubuntu 22.04 LTS  
