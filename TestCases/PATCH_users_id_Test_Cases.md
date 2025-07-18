@@ -10,17 +10,19 @@
 
 **Test Steps:**  
 1. Open Postman and set method to PATCH.  
-2. Set URL to `https://reqres.in/api/users/2`.  
-3. Set request body to: `{"name":"morpheus"}`.  
-4. Send the request.  
+2. Set URL to `https://reqres.in/api/users/2`.
+3. Add header: `Content-Type: application/json` and `x-api-key: reqres-free-v1`.  
+4. Set request body to: `{"name":"morpheus"}`.  
+5. Send the request.
+6. Validate response fields.  
 
 **Expected Results:**  
-- HTTP status code `200 OK`.  
-- Response body contains updated `name`.  
+- HTTP status code is `200 OK`.  
+- Response body contains updated `name: "morpheus"`.  
 - Existing `job` remains unchanged (if previously set).  
 - Response includes `updatedAt` timestamp.  
-- Response header `Content-Type` is `application/json`.  
-- Response time < 3 seconds.  
+- Response header `Content-Type` is `application/json; charstet=utf-8`.  
+- Response time is under 3 seconds.  
 
 **Priority:** High  
 
@@ -36,15 +38,17 @@
 
 **Test Steps:**  
 1. Open Postman and set method to PATCH.  
-2. Set URL to `https://reqres.in/api/users/2`.  
-3. Use empty JSON as request body: `{}`.  
-4. Send the request.  
+2. Set URL to `https://reqres.in/api/users/2`.
+3. Headers: `Content-Type: application/json`, `x-api-key: reqres-free-v1`.  
+4. Use empty JSON as request body: `{}`.  
+5. Send the request.  
 
 **Expected Results:**  
-- HTTP status code `400 Bad Request`.  
-- Response body contains an error message such as `"Missing data"` or similar.  
-- `Content-Type` is `application/json`.  
-- Response time < 3 seconds.  
+- HTTP status code is `400 Bad Request`.  
+- Response body includes an error message like `"Missing data"` or similar.  
+- Header `Content-Type` is `application/json`.  
+- Response time < 3 seconds.
+- No user data is updated.
 
 **Priority:** Medium  
 
@@ -60,15 +64,16 @@
 
 **Test Steps:**  
 1. Open Postman and set method to PATCH.  
-2. Set URL to `https://reqres.in/api/users/999`.  
-3. Set request body to a valid payload: `{"name":"ghost"}`.  
-4. Send the request.  
+2. Set URL to `https://reqres.in/api/users/999`.
+3. Headers: `Content-Type: application/json`, `x-api-key: reqres-free-v1`.    
+4. Set request body to a valid payload: `{"name":"ghost"}`.  
+5. Send the request.  
 
 **Expected Results:**  
 - HTTP status code `404 Not Found` or `204 No Content`.  
 - No data should be updated.  
 - Response body is empty or includes error message.  
-- Response time < 3 seconds.  
+- Response time is under 3 seconds.  
 
 **Priority:** Medium  
 
