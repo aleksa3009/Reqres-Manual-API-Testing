@@ -8,16 +8,18 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Set method to PUT and URL to `https://reqres.in/api/users/2`.  
-3. Set request body to `{"name":"neo","job":"the one"}`.  
-4. Send the request.  
+2. Set method to PUT and URL to `https://reqres.in/api/users/2`.
+3. Add header: `x-api-key: reqres-free-v1`.  
+4. Set request body to `{"name":"neo","job":"the one"}`.  
+5. Send the request.  
 
 **Expected Results:**  
 - HTTP status code is `200 OK`.  
 - Response body reflects updated `name` and `job`.  
 - Response body contains `updatedAt` timestamp.  
 - Response header `Content-Type` is `application/json`.  
-- Response time is less than 3 seconds.  
+- Response time is less than 3 seconds.
+- Response headers and status codes are consistent.  
 
 **Priority:** High  
 
@@ -33,15 +35,17 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Set method to PUT and URL to `https://reqres.in/api/users/999`.  
-3. Set request body to a valid JSON payload (e.g., `{"name":"test","job":"tester"}`).  
-4. Send the request.  
+2. Set method to PUT and URL to `https://reqres.in/api/users/999`.
+3. Add header: `x-api-key: reqres-free-v1`.  
+4. Set request body to a valid JSON payload (e.g., `{"name":"test","job":"tester"}`).  
+5. Send the request.  
 
 **Expected Results:**  
 - HTTP status code is `404 Not Found` or `200 OK` with created resource.  
 - Behavior is documented in test results.  
 - Response header `Content-Type` is `application/json`.  
-- Response time is less than 3 seconds.  
+- Response time is less than 3 seconds.
+- Response headers and status codes are consistent.  
 
 **Priority:** Medium  
 
@@ -57,15 +61,17 @@
 
 **Test Steps:**  
 1. Open Postman.  
-2. Set method to PUT and URL to `https://reqres.in/api/users/2`.  
-3. Set request body to empty JSON `{}`.  
-4. Send the request.  
+2. Set method to PUT and URL to `https://reqres.in/api/users/2`.
+3. Add header: `x-api-key: reqres-free-v1`.  
+4. Set request body to empty JSON `{}`.  
+5. Send the request.  
 
 **Expected Results:**  
 - HTTP status code is `400 Bad Request`.  
 - Response body contains error message indicating bad request.  
 - Response header `Content-Type` is `application/json`.  
-- Response time is less than 3 seconds.  
+- Response time is less than 3 seconds.
+- Response headers and status codes are consistent.  
 
 **Priority:** Medium  
 
