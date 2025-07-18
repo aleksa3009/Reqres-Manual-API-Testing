@@ -150,7 +150,7 @@ This document serves as the formal test plan for manual testing of the public RE
 - Test Data JSON files (`TestData/valid_payloads.json`, `invalid_payloads.json`)  
 - Execution results logs and response snapshots (`ExecutionResults/`)  
 - Defect reports in GitHub Issues  
-- Daily Reports (`Reports/Daily_Report_YYYY-MM-DD.md`)  
+- Daily Reports (`Reports/Daily_Report_DD-MM-YYYY.md`)  
 - Final Summary Report (`Reports/Final_Report.md`)  
 
 ---
