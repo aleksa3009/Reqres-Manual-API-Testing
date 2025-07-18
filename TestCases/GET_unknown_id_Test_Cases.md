@@ -27,7 +27,7 @@
 **Title:** Verify GET /unknown/3 returns 200 and correct resource
 
 **Preconditions:**  
-- Resource with id=3 exists  
+- Verify resource existence with GET /unknown/3 before test execution  
 
 **Test Steps:**  
 1. Open Postman.  
