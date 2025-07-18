@@ -56,9 +56,9 @@ This document serves as the formal test plan for manual testing of the public RE
 
 | Role        | Name           | Responsibility                                           |
 |-------------|----------------|---------------------------------------------------------|
-| Tester      | Aleksa Aleksić | Create test plan, write and execute test cases, log defects |
-| Reviewer    | QA Mentor/ Self| Review test artifacts and provide feedback              |
-| Stakeholder | API Team/ Self | Triage and fix reported defects                          |
+| Tester      | Aleksa Aleksić | Create test plan, design and execute test cases, log and track defects |
+| Reviewer    | Aleksa Aleksić| Review test artifacts and provide feedback              |
+| Stakeholder | Aleksa Aleksić | Analyze and resolve reported issues based on test findings |
 
 ---
 
@@ -80,25 +80,25 @@ This document serves as the formal test plan for manual testing of the public RE
 
 ## 6. Test Approach and Strategy
 
-1. **Test Types:** Functional, boundary, negative, exploratory  
+1. **Test Types:** Functional, boundary, negative and exploratory testing (to discover edge cases and unexpected issues) 
 2. **Test Design:**  
    - Risk-based prioritization focusing on high-impact endpoints and common failure points  
-   - Detailed, step-by-step test cases documented in MarkDown and TestRail  
+   - Detailed, step-by-step test cases documented in Markdown and TestRail  
 3. **Execution Order:**  
    1. GET endpoints (list and single user)  
    2. POST endpoints (register and login)  
    3. PUT, PATCH, DELETE endpoints  
    4. GET unknown endpoints  
-4. **Environment:** Testing on latest stable Postman client, on Windows and Linux OS  
-5. **Defect Management:** Logging all bugs in GitHub Issues with reproduction steps, payloads, and screenshots  
-6. **Performance:** Measure response times and flag any over 3 seconds  
+4. **Environment:** Testing manually using the latest stable Postman client (including JSON Schema validation), on Linux OS  
+5. **Defect Management:** Logging all bugs in GitHub Issues with detailed reproduction steps, request payloads, response screenshots, and status tracking 
+6. **Performance:** Measure response times and flag any responses exceeding 3 seconds  
 
 ---
 
 ## 7. Environment and Tools
 
-- **Operating Systems:** Ubuntu 22.04 LTS (primary), Windows 10 Pro  
-- **API Client:** Postman  
+- **Operating Systems:** Ubuntu 22.04 LTS  
+- **API Client:** Postman v11.54.0 (latest stable version) 
 - **Validation:** JSON Schema validation via Postman tests  
 - **Bug Tracking:** GitHub Issues  
 - **Editor:** Visual Studio Code  
