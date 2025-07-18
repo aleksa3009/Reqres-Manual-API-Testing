@@ -2,9 +2,10 @@
 # Test Plan: Reqres.in - Manual Testing of REST API Endpoints
 
 **Author:** Aleksa Aleksić  
-**Date:** 25.6.2025  
+**Date:** 25.6.2025
+**Version:** 2.0
 **Project:** Reqres.in REST API Manual Testing  
-**Base URL:** https://reqres.in/api
+**Base URL:** [https://reqres.in/api](https://reqres.in/api)
 
 ---
 
@@ -17,31 +18,37 @@ This document serves as the formal test plan for manual testing of the public RE
 
 **In Scope:**  
 - Functional manual testing of the following API endpoints:  
-  - GET /users?page={n} and GET /users/{id}  
-  - POST /register and POST /login  
-  - PUT and PATCH /users/{id}  
-  - DELETE /users/{id}  
-  - GET /unknown and GET /unknown/{id}  
-- Validation of HTTP status codes (200, 201, 400, 404, etc.)  
-- Verification of JSON schema and response data correctness  
-- Negative and boundary testing including invalid inputs, missing fields, and incorrect data types  
-- Recording response times and flagging slow responses (> 3 seconds)  
-- Defect logging and tracking in GitHub Issues  
+  - **GET /users?page={n}**
+  - **GET /users/{id}**  
+  - **POST /register**
+  - **POST /login**  
+  - **PUT /users/{id}** 
+  - **PATCH /users/{id}**  
+  - **DELETE /users/{id}**  
+  - **GET /unknown** 
+  - **GET /unknown/{id}**  
+- **Validation of HTTP status codes** (200, 201, 400, 404, etc.)  
+- **Verification of JSON schema** and response data correctness  
+- **Negative and boundary testing** including invalid inputs, missing fields, and incorrect data types  
+- Recording **response times** and flagging slow responses (> 3 seconds)  
+- Defect logging and tracking in **GitHub Issues**
+- Manual execution of test cases using **Postman** and documentation of results in **Markdown** format  
 
 **Out of Scope:**  
-- Automated testing or scripting  
-- Security testing (token validation, authentication exploits)  
-- Extensive performance or load testing  
+- **Automated testing** (e.g., scripting with Postman, REST Assured, or CI integration)  
+- **Security testing** (token validation, authentication exploits)  
+- Extensive **performance or load testing**
+- **Modifications to backend or database** (testing is limited to publicly available responses only)  
 
 ---
 
 ## 3. Objectives  
-- Confirm all API endpoints behave as expected with valid and invalid inputs  
-- Ensure all JSON responses comply with expected schema and contain required fields  
-- Validate proper error messages and status codes on invalid requests  
-- Measure and document API response times, highlighting any delays  
-- Log defects with clear reproduction steps, payloads, and expected vs. actual results  
-- Deliver professional test artifacts including test cases, execution logs, defect reports, and summary documentation  
+**1.** Confirm all API endpoints behave as expected with valid and invalid inputs  
+**2.** Ensure all JSON responses comply with expected schema and contain required fields  
+**3.** Validate proper error messages and status codes on invalid requests  
+**4.** Measure and document API response times, highlighting any delays  
+**5.** Log defects with clear reproduction steps, payloads, and expected vs. actual results  
+**6.** Deliver professional test artifacts including test cases, execution logs, defect reports, and summary documentation  
 
 ---
 
