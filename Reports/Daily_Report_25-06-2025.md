@@ -1,7 +1,7 @@
 # Daily Report – Day 1 (25-06-2025)
 
 **Activities:**  
-- Completed the Test Plan (`TestPlan/Reqres_Test_Plan.md`), covering introduction, scope, objectives, roles & responsibilities, environment & tools, entry/exit criteria, risk assessment, deliverables and schedule.  
+- Updated and fialized the Test Plan (`TestPlan/Reqres_Test_Plan.md`), covering introduction, scope, objectives, roles & responsibilities, environment & tools, entry/exit criteria, risk assessment, deliverables and schedule.  
 - Prepared test data JSON files in the `TestData/` folder:  
   - `valid_payloads.json` (register, login, full & partial update payloads)  
   - `invalid_payloads.json` (missing fields, extra fields, empty payload)  
@@ -11,7 +11,7 @@
 **Environment:**  
 - Operating System: Ubuntu 22.04 LTS  
 - API Client: Postman (with JSON Schema plugin)  
-- Test Management: Visual Studio Code (Markdown)  
+- Test Management: Visual Studio Code (Markdown-based documentation)  
 - Version Control System: Git and GitHub  
 - Editor: Visual Studio Code  
 
