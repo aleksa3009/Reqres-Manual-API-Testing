@@ -37,7 +37,7 @@
 - Confirm response is `{ "error": "Missing password" }`.  
 **Result:** FAIL  
 **Actual:** Error is missing due to missing API key.  
-**Screenshot:** `ExecutionResults/Screenshots/API_16_fail.png`  
+![Screenshot](./Screenshots/API_16_fail.png)
 **End Time:** 27-06-2025 10:14  
 
 ---
@@ -77,7 +77,7 @@
 - Expect `400` with error `Missing password`.  
 **Result:** FAIL  
 **Actual:** Request succeeds unexpectedly.  
-**Screenshot:** `ExecutionResults/Screenshots/API_19_fail.png`  
+![Screenshot](./Screenshots/API_19_fail.png)
 **End Time:** 27-06-2025 10:37  
 
 ---
@@ -136,7 +136,7 @@
 - Expect 400, with `Missing password` error.  
 **Result:** FAIL  
 **Actual:** No error shown.  
-**Screenshot:** `ExecutionResults/Screenshots/API_24_fail.png`  
+![Screenshot](./Screenshots/API_24_fail.png)
 **End Time:** 27-06-2025 11:14  
 
 ---

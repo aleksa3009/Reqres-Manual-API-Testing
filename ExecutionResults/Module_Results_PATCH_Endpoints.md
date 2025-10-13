@@ -26,7 +26,7 @@
 - Click **Send**.  
 **Result:** FAIL  
 **Actual:** Returned `200 OK` instead of `400 Bad Request`  
-**Screenshot:** `ExecutionResults/Screenshots/API_33_fail.png`  
+![Screenshot](./Screenshots/API_33_fail.png)
 **End Time:** 28-06-2025 09:58  
 
 ---

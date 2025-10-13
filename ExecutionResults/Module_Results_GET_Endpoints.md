@@ -28,7 +28,7 @@
 4. Verify `page` field equals `0`.  
 **Result:** FAIL  
 **Actual:** "error": "Missing API key".  
-**Screenshot:** `ExecutionResults/Screenshots/API_02_fail.png`  
+![Screenshot](./Screenshots/API_02_fail.png)
 **End Time:** 26-06-2025 10:14
 
 ---
@@ -54,7 +54,7 @@
 4. Validate error or empty data.  
 **Result:** FAIL  
 **Actual:** Returned status 200 with data instead of error.  
-**Screenshot:** `ExecutionResults/Screenshots/API_04_fail.png`  
+![Screenshot](./Screenshots/API_04_fail.png)
 **End Time:** 26-06-2025 10:36
 
 ---
@@ -80,7 +80,7 @@
 4. Validate error or empty response.  
 **Result:** FAIL  
 **Actual:** Returned non-empty data instead of empty or error.  
-**Screenshot:** `ExecutionResults/Screenshots/API_06_fail.png`  
+![Screenshot](./Screenshots/API_06_fail.png)
 **End Time:** 26-06-2025 10:58
 
 ---
@@ -137,7 +137,7 @@
 4. Confirm body is empty or `{}`.  
 **Result:** FAIL  
 **Actual:** Returned status 200 with empty data instead of 404.  
-**Screenshot:** `ExecutionResults/Screenshots/API_10_fail.png`  
+![Screenshot](./Screenshots/API_10_fail.png)
 **End Time:** 26-06-2025 11:41
 
 ---
@@ -163,7 +163,7 @@
 4. Confirm body empty.  
 **Result:** FAIL  
 **Actual:** Returned status 200 with default user data instead of 404.  
-**Screenshot:** `ExecutionResults/Screenshots/API_12_fail.png`  
+![Screenshot](./Screenshots/API_12_fail.png)
 **End Time:** 26-06-2025 12:00
 
 ---

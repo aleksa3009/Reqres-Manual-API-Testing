@@ -24,7 +24,7 @@
 - Click **Send**.  
 **Result:** FAIL  
 **Actual:** Returned `204 No Content` again instead of `404 Not Found`  
-**Screenshot:** `ExecutionResults/Screenshots/API_36_fail.png`  
+![Screenshot](./Screenshots/API_36_fail.png)
 **End Time:** 28-06-2025 10:25  
 
 ---

@@ -27,7 +27,7 @@
 - Click **Send**.  
 **Result:** FAIL  
 **Actual:** Returned `200 OK` creating new resource instead of `404 Not Found`  
-**Screenshot:** `ExecutionResults/Screenshots/API_30_fail.png`  
+![Screenshot](./Screenshots/API_30_fail.png)
 **End Time:** 28-06-2025 09:28  
 
 ---
@@ -40,7 +40,7 @@
 - Click **Send**.  
 **Result:** FAIL  
 **Actual:** Returned `200 OK` with no validation error  
-**Screenshot:** `ExecutionResults/Screenshots/API_31_fail.png`  
+![Screenshot](./Screenshots/API_30_fail.png)
 **End Time:** 28-06-2025 09:38  
 
 ---
